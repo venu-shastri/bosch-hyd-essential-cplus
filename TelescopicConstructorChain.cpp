@@ -9,6 +9,7 @@ class BankCustomer{
         string phoneNumber;
     
     public:
+    BankCustomer() {}
     //Compile Time Polymorphism , constructor Overloading
     BankCustomer(string nameArg,string adharNumberArg,string panNumberArg){
         this->name=nameArg;
@@ -18,24 +19,7 @@ class BankCustomer{
         this->phoneNumber="";
         
     }
-       BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg){
-        this->name=nameArg;
-        this->adharNumber=adharNumberArg;
-        this->panNumber=panNumberArg;
-        this->emailId=emailArg;
-        this->phoneNumber="";
-        
-    }
-     BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string phoneArg){
-        this->name=nameArg;
-        this->adharNumber=adharNumberArg;
-        this->panNumber=panNumberArg;
-        this->emailId="";
-        this->phoneNumber=phoneArg;
-        
-    }
-    
-     BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string phoneArg,string emailArg){
+       BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg){
         this->name=nameArg;
         this->adharNumber=adharNumberArg;
         this->panNumber=panNumberArg;
@@ -43,10 +27,11 @@ class BankCustomer{
         this->phoneNumber=phoneArg;
         
     }
+ 
     
-        void printCustomerInfo(){
+    void printCustomerInfo(){
             //cout<<
-        }
+    }
     
 };
 
