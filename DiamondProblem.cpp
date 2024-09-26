@@ -15,7 +15,7 @@ class Device{
         cout<<"Device Destructed"<<endl;
     }
 };
-class Printer:virtual public Device{
+class Printer: public Device{
     protected:
     Printer():Device::Device("",""){
         cout<<"Printer Instantiated"<<endl;
@@ -32,7 +32,7 @@ class Printer:virtual public Device{
     }
 };
 
-class Scanner:virtual public Device{
+class Scanner:public Device{
  
  protected:
  Scanner():Device::Device("",""){
@@ -50,16 +50,23 @@ class Scanner:virtual public Device{
 };
 
 
-class PrintScanner:public Printer,public Scanner{
+class PrintScanner:public Device{
+    Printer printerObj {"H1","HP1"};
+    Scanner scannerObj {"H2","HS1"};
     public:
     PrintScanner(string assetId,string model):Device::Device(assetId,model){
         
     }
-    
-    string getModelName(){
-    //    return this->model;
-    return "";
+    void print(string content){
+      //delegation
+      printerObj.print(content);
+      
     }
+   void scan(string content){
+      //delegation
+     scannerObj.scan(content);
+   }
+    
     ~PrintScanner(){
         cout<<"Print Scanner Destructed"<<endl;
     }
