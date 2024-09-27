@@ -20,8 +20,8 @@ int divOperation(int n, int d) {
         return result = n / d;
     }
     catch(const std::runtime_error ref_information) {
-        cout << ref_information.what() << endl;
-        throw ref_information;
+        cout << "runtime_Error" << ref_information.what() << endl;
+        //throw ref_information;
     }
     catch (...) {
         cout << "Exception in Div" << endl;
@@ -37,7 +37,7 @@ void test() {
         cout << divOperation(10, 2) << endl;
     }
     catch (const std::exception ref_information) {
-        cout << ref_information.what() << endl;
+        cout <<"Test"<< ref_information.what() << endl;
     }
     catch (...) {
         cout << "Exception in Div" << endl;
